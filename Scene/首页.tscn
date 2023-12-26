@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://dbcfxk4676n1g"]
 
-[ext_resource type="StyleBox" uid="uid://cyp0kvuhfeks6" path="res://Styles/首页按钮 正常.tres" id="1_3ber7"]
-[ext_resource type="StyleBox" uid="uid://bceber31qh344" path="res://Styles/首页内容背景.tres" id="1_pn8f3"]
-[ext_resource type="StyleBox" uid="uid://3nlcact4ip32" path="res://Styles/首页按键标签 快速记账.tres" id="2_k0843"]
-[ext_resource type="StyleBox" uid="uid://clvj5hdk7ecbj" path="res://Styles/首页按钮 按下.tres" id="2_pq22l"]
-[ext_resource type="StyleBox" uid="uid://byjadv41roacr" path="res://Styles/首页按键标签 查询账单.tres" id="3_8uipt"]
-[ext_resource type="StyleBox" uid="uid://bmg53cfn5lbl7" path="res://Styles/首页按键标签 自定义格式.tres" id="4_q6a06"]
+[ext_resource type="StyleBox" uid="uid://cyp0kvuhfeks6" path="res://Assets/Styles/首页按钮 正常.tres" id="1_3ber7"]
+[ext_resource type="StyleBox" uid="uid://bceber31qh344" path="res://Assets/Styles/首页内容背景.tres" id="1_pn8f3"]
+[ext_resource type="StyleBox" uid="uid://3nlcact4ip32" path="res://Assets/Styles/首页按键标签 快速记账.tres" id="2_k0843"]
+[ext_resource type="StyleBox" uid="uid://clvj5hdk7ecbj" path="res://Assets/Styles/首页按钮 按下.tres" id="2_pq22l"]
+[ext_resource type="StyleBox" uid="uid://byjadv41roacr" path="res://Assets/Styles/首页按键标签 查询账单.tres" id="3_8uipt"]
+[ext_resource type="StyleBox" uid="uid://bmg53cfn5lbl7" path="res://Assets/Styles/首页按键标签 自定义格式.tres" id="4_q6a06"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2yie8"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

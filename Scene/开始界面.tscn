@@ -1,23 +1,23 @@
 [gd_scene load_steps=19 format=3 uid="uid://bfhkjsipttnlj"]
 
-[ext_resource type="StyleBox" uid="uid://dryr6w1xea25x" path="res://Styles/按钮悬停颜色.tres" id="1_2yiq1"]
-[ext_resource type="StyleBox" uid="uid://100mx3i0jfcu" path="res://Styles/按钮正常颜色.tres" id="1_28cmh"]
-[ext_resource type="Script" path="res://Scripts/PageController.gd" id="1_ya1l2"]
-[ext_resource type="Texture2D" uid="uid://c7pe2e8thg77p" path="res://Pictures/主页.png" id="2_jf5jh"]
-[ext_resource type="ButtonGroup" uid="uid://ctirh5o541fb" path="res://ButtonGroup/左侧边栏按钮组合.tres" id="2_tjd1q"]
-[ext_resource type="Texture2D" uid="uid://0mcjkxk8dgnk" path="res://Pictures/账单.png" id="3_uyeki"]
-[ext_resource type="Texture2D" uid="uid://cffybmolvh4cf" path="res://Pictures/分析.png" id="4_2oi4a"]
-[ext_resource type="Texture2D" uid="uid://b4c118br80mkq" path="res://Pictures/自定义.png" id="5_btxic"]
-[ext_resource type="Texture2D" uid="uid://c4as7h8t6gr6j" path="res://Pictures/设置.png" id="6_71vbd"]
-[ext_resource type="Texture2D" uid="uid://35ux4ra7pnjd" path="res://Pictures/下拉箭头.png" id="9_h77fo"]
-[ext_resource type="StyleBox" uid="uid://d38geray8yyk5" path="res://Styles/账单选择框 聚焦.tres" id="9_ucapx"]
-[ext_resource type="StyleBox" uid="uid://geiggxwr08tv" path="res://Styles/账单选择框 正常.tres" id="10_c7u3l"]
-[ext_resource type="StyleBox" uid="uid://egno6quggi4f" path="res://Styles/账单选择框 选中.tres" id="11_b48be"]
-[ext_resource type="StyleBox" uid="uid://duf6nuinmhkf3" path="res://Styles/日期选择框 正常.tres" id="13_vfgmk"]
-[ext_resource type="Texture2D" uid="uid://rqq5x66j34ka" path="res://Pictures/日期选择.png" id="13_wn0vi"]
-[ext_resource type="StyleBox" uid="uid://btnsql2b3fgk3" path="res://Styles/日期选择框 聚焦.tres" id="14_ohfdf"]
-[ext_resource type="StyleBox" uid="uid://q0voc70ypmal" path="res://Styles/日期选择框 选中.tres" id="15_ylhii"]
-[ext_resource type="Texture2D" uid="uid://dwahnvao6ro37" path="res://Pictures/用户头像.png" id="17_wkak0"]
+[ext_resource type="StyleBox" uid="uid://dryr6w1xea25x" path="res://Assets/Styles/按钮悬停颜色.tres" id="1_2yiq1"]
+[ext_resource type="Script" path="res://Scripts/WindowControllers/PageController.gd" id="1_3ptut"]
+[ext_resource type="StyleBox" uid="uid://100mx3i0jfcu" path="res://Assets/Styles/按钮正常颜色.tres" id="1_28cmh"]
+[ext_resource type="Texture2D" uid="uid://c7pe2e8thg77p" path="res://Assets/Pictures/主页.png" id="2_jf5jh"]
+[ext_resource type="ButtonGroup" uid="uid://ctirh5o541fb" path="res://Assets/ButtonGroup/左侧边栏按钮组合.tres" id="2_tjd1q"]
+[ext_resource type="Texture2D" uid="uid://0mcjkxk8dgnk" path="res://Assets/Pictures/账单.png" id="3_uyeki"]
+[ext_resource type="Texture2D" uid="uid://cffybmolvh4cf" path="res://Assets/Pictures/分析.png" id="4_2oi4a"]
+[ext_resource type="Texture2D" uid="uid://b4c118br80mkq" path="res://Assets/Pictures/自定义.png" id="5_btxic"]
+[ext_resource type="Texture2D" uid="uid://c4as7h8t6gr6j" path="res://Assets/Pictures/设置.png" id="6_71vbd"]
+[ext_resource type="Texture2D" uid="uid://35ux4ra7pnjd" path="res://Assets/Pictures/下拉箭头.png" id="9_h77fo"]
+[ext_resource type="StyleBox" uid="uid://d38geray8yyk5" path="res://Assets/Styles/账单选择框 聚焦.tres" id="9_ucapx"]
+[ext_resource type="StyleBox" uid="uid://geiggxwr08tv" path="res://Assets/Styles/账单选择框 正常.tres" id="10_c7u3l"]
+[ext_resource type="StyleBox" uid="uid://egno6quggi4f" path="res://Assets/Styles/账单选择框 选中.tres" id="11_b48be"]
+[ext_resource type="StyleBox" uid="uid://duf6nuinmhkf3" path="res://Assets/Styles/日期选择框 正常.tres" id="13_vfgmk"]
+[ext_resource type="Texture2D" uid="uid://rqq5x66j34ka" path="res://Assets/Pictures/日期选择.png" id="13_wn0vi"]
+[ext_resource type="StyleBox" uid="uid://btnsql2b3fgk3" path="res://Assets/Styles/日期选择框 聚焦.tres" id="14_ohfdf"]
+[ext_resource type="StyleBox" uid="uid://q0voc70ypmal" path="res://Assets/Styles/日期选择框 选中.tres" id="15_ylhii"]
+[ext_resource type="Texture2D" uid="uid://dwahnvao6ro37" path="res://Assets/Pictures/用户头像.png" id="17_wkak0"]
 
 [node name="标题页" type="Control"]
 custom_minimum_size = Vector2(1600, 900)
@@ -27,7 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ya1l2")
+script = ExtResource("1_3ptut")
 buttonGroup = ExtResource("2_tjd1q")
 
 [node name="总背景" type="ColorRect" parent="."]

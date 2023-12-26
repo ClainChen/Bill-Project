@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://35ux4ra7pnjd"
-path="res://.godot/imported/下拉箭头.png-ded3e2374b19d5800b93f6fa774a614c.ctex"
+path="res://.godot/imported/下拉箭头.png-a114c93c5654690d666a3729cd3dbdd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pictures/下拉箭头.png"
-dest_files=["res://.godot/imported/下拉箭头.png-ded3e2374b19d5800b93f6fa774a614c.ctex"]
+source_file="res://Assets/Pictures/下拉箭头.png"
+dest_files=["res://.godot/imported/下拉箭头.png-a114c93c5654690d666a3729cd3dbdd1.ctex"]
 
 [params]
 

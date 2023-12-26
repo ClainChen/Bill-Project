@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://h50kqmb1xjjl"
-path="res://.godot/imported/左箭头.png-6d9d7c61414450d4ffc49e063762d80b.ctex"
+path="res://.godot/imported/左箭头.png-2e791bbfb79040e9db38718f903cbe02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pictures/左箭头.png"
-dest_files=["res://.godot/imported/左箭头.png-6d9d7c61414450d4ffc49e063762d80b.ctex"]
+source_file="res://Assets/Pictures/左箭头.png"
+dest_files=["res://.godot/imported/左箭头.png-2e791bbfb79040e9db38718f903cbe02.ctex"]
 
 [params]
 
