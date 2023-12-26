@@ -1,0 +1,209 @@
+[gd_scene load_steps=19 format=3 uid="uid://bfhkjsipttnlj"]
+
+[ext_resource type="StyleBox" uid="uid://dryr6w1xea25x" path="res://Styles/按钮悬停颜色.tres" id="1_2yiq1"]
+[ext_resource type="StyleBox" uid="uid://100mx3i0jfcu" path="res://Styles/按钮正常颜色.tres" id="1_28cmh"]
+[ext_resource type="Script" path="res://Scripts/PageController.gd" id="1_ya1l2"]
+[ext_resource type="Texture2D" uid="uid://c7pe2e8thg77p" path="res://Pictures/主页.png" id="2_jf5jh"]
+[ext_resource type="ButtonGroup" uid="uid://ctirh5o541fb" path="res://ButtonGroup/左侧边栏按钮组合.tres" id="2_tjd1q"]
+[ext_resource type="Texture2D" uid="uid://0mcjkxk8dgnk" path="res://Pictures/账单.png" id="3_uyeki"]
+[ext_resource type="Texture2D" uid="uid://cffybmolvh4cf" path="res://Pictures/分析.png" id="4_2oi4a"]
+[ext_resource type="Texture2D" uid="uid://b4c118br80mkq" path="res://Pictures/自定义.png" id="5_btxic"]
+[ext_resource type="Texture2D" uid="uid://c4as7h8t6gr6j" path="res://Pictures/设置.png" id="6_71vbd"]
+[ext_resource type="Texture2D" uid="uid://35ux4ra7pnjd" path="res://Pictures/下拉箭头.png" id="9_h77fo"]
+[ext_resource type="StyleBox" uid="uid://d38geray8yyk5" path="res://Styles/账单选择框 聚焦.tres" id="9_ucapx"]
+[ext_resource type="StyleBox" uid="uid://geiggxwr08tv" path="res://Styles/账单选择框 正常.tres" id="10_c7u3l"]
+[ext_resource type="StyleBox" uid="uid://egno6quggi4f" path="res://Styles/账单选择框 选中.tres" id="11_b48be"]
+[ext_resource type="StyleBox" uid="uid://duf6nuinmhkf3" path="res://Styles/日期选择框 正常.tres" id="13_vfgmk"]
+[ext_resource type="Texture2D" uid="uid://rqq5x66j34ka" path="res://Pictures/日期选择.png" id="13_wn0vi"]
+[ext_resource type="StyleBox" uid="uid://btnsql2b3fgk3" path="res://Styles/日期选择框 聚焦.tres" id="14_ohfdf"]
+[ext_resource type="StyleBox" uid="uid://q0voc70ypmal" path="res://Styles/日期选择框 选中.tres" id="15_ylhii"]
+[ext_resource type="Texture2D" uid="uid://dwahnvao6ro37" path="res://Pictures/用户头像.png" id="17_wkak0"]
+
+[node name="标题页" type="Control"]
+custom_minimum_size = Vector2(1600, 900)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ya1l2")
+buttonGroup = ExtResource("2_tjd1q")
+
+[node name="总背景" type="ColorRect" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.878431, 0.878431, 0.878431, 1)
+
+[node name="标题" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 2
+offset_right = 150.0
+offset_bottom = 80.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="背景" type="ColorRect" parent="标题"]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 2
+color = Color(0.164706, 0.164706, 0.176471, 1)
+
+[node name="标题文字" type="Label" parent="标题"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "一笔好帐"
+
+[node name="左侧边栏" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 80.0
+offset_bottom = 80.0
+
+[node name="左侧边栏背景" type="ColorRect" parent="左侧边栏"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_right = 150.0
+offset_bottom = 820.0
+grow_vertical = 2
+size_flags_vertical = 3
+color = Color(0.298039, 0.298039, 0.298039, 1)
+
+[node name="左侧边栏" type="VBoxContainer" parent="左侧边栏"]
+layout_mode = 2
+offset_right = 150.0
+offset_bottom = 820.0
+size_flags_vertical = 3
+
+[node name="首页按钮" type="Button" parent="左侧边栏/左侧边栏"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = ExtResource("1_28cmh")
+theme_override_styles/hover = ExtResource("1_2yiq1")
+theme_override_styles/pressed = ExtResource("1_2yiq1")
+toggle_mode = true
+button_group = ExtResource("2_tjd1q")
+text = "首页"
+icon = ExtResource("2_jf5jh")
+
+[node name="账簿按钮" type="Button" parent="左侧边栏/左侧边栏"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = ExtResource("1_28cmh")
+theme_override_styles/hover = ExtResource("1_2yiq1")
+theme_override_styles/pressed = ExtResource("1_2yiq1")
+toggle_mode = true
+button_group = ExtResource("2_tjd1q")
+text = "账簿"
+icon = ExtResource("3_uyeki")
+
+[node name="分析按钮" type="Button" parent="左侧边栏/左侧边栏"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = ExtResource("1_28cmh")
+theme_override_styles/hover = ExtResource("1_2yiq1")
+theme_override_styles/pressed = ExtResource("1_2yiq1")
+toggle_mode = true
+button_group = ExtResource("2_tjd1q")
+text = "分析"
+icon = ExtResource("4_2oi4a")
+
+[node name="格式按钮" type="Button" parent="左侧边栏/左侧边栏"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = ExtResource("1_28cmh")
+theme_override_styles/hover = ExtResource("1_2yiq1")
+theme_override_styles/pressed = ExtResource("1_2yiq1")
+toggle_mode = true
+button_group = ExtResource("2_tjd1q")
+text = "格式"
+icon = ExtResource("5_btxic")
+
+[node name="设置按钮" type="Button" parent="左侧边栏/左侧边栏"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = ExtResource("1_28cmh")
+theme_override_styles/hover = ExtResource("1_2yiq1")
+theme_override_styles/pressed = ExtResource("1_2yiq1")
+toggle_mode = true
+button_group = ExtResource("2_tjd1q")
+text = "设置"
+icon = ExtResource("6_71vbd")
+
+[node name="顶端栏" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="顶端容器" type="HBoxContainer" parent="顶端栏"]
+layout_mode = 0
+offset_left = 170.0
+offset_right = 1570.0
+offset_bottom = 80.0
+theme_override_constants/separation = 10
+
+[node name="区域选择框" type="OptionButton" parent="顶端栏/顶端容器"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_constants/arrow_margin = 20
+theme_override_icons/arrow = ExtResource("9_h77fo")
+theme_override_styles/focus = ExtResource("9_ucapx")
+theme_override_styles/normal = ExtResource("10_c7u3l")
+theme_override_styles/hover = ExtResource("11_b48be")
+theme_override_styles/pressed = ExtResource("10_c7u3l")
+
+[node name="日期选择" type="Button" parent="顶端栏/顶端容器"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("13_vfgmk")
+theme_override_styles/hover = ExtResource("14_ohfdf")
+theme_override_styles/pressed = ExtResource("15_ylhii")
+toggle_mode = true
+text = "日期"
+icon = ExtResource("13_wn0vi")
+icon_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="顶端栏/顶端容器"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture = ExtResource("17_wkak0")

@@ -1,0 +1,117 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbcfxk4676n1g"]
+
+[ext_resource type="StyleBox" uid="uid://cyp0kvuhfeks6" path="res://Styles/首页按钮 正常.tres" id="1_3ber7"]
+[ext_resource type="StyleBox" uid="uid://bceber31qh344" path="res://Styles/首页内容背景.tres" id="1_pn8f3"]
+[ext_resource type="StyleBox" uid="uid://3nlcact4ip32" path="res://Styles/首页按键标签 快速记账.tres" id="2_k0843"]
+[ext_resource type="StyleBox" uid="uid://clvj5hdk7ecbj" path="res://Styles/首页按钮 按下.tres" id="2_pq22l"]
+[ext_resource type="StyleBox" uid="uid://byjadv41roacr" path="res://Styles/首页按键标签 查询账单.tres" id="3_8uipt"]
+[ext_resource type="StyleBox" uid="uid://bmg53cfn5lbl7" path="res://Styles/首页按键标签 自定义格式.tres" id="4_q6a06"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2yie8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="首页" type="Window"]
+transparent_bg = true
+size = Vector2i(1300, 700)
+unresizable = true
+borderless = true
+transparent = true
+
+[node name="背景色" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_pn8f3")
+
+[node name="按钮排列容器" type="HBoxContainer" parent="."]
+offset_left = 40.0
+offset_top = 50.0
+offset_right = 1260.0
+offset_bottom = 170.0
+
+[node name="快速记账" type="Button" parent="按钮排列容器"]
+custom_minimum_size = Vector2(300, 120)
+layout_mode = 2
+size_flags_horizontal = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.513726, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("1_3ber7")
+theme_override_styles/hover = ExtResource("2_pq22l")
+theme_override_styles/pressed = ExtResource("2_pq22l")
+text = "快速记账"
+
+[node name="底部标签" type="Panel" parent="按钮排列容器/快速记账"]
+show_behind_parent = true
+layout_mode = 0
+offset_top = 90.0
+offset_right = 300.0
+offset_bottom = 120.0
+theme_override_styles/panel = ExtResource("2_k0843")
+
+[node name="查询账单" type="Button" parent="按钮排列容器"]
+custom_minimum_size = Vector2(300, 120)
+layout_mode = 2
+size_flags_horizontal = 6
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.352941, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("1_3ber7")
+theme_override_styles/hover = ExtResource("2_pq22l")
+theme_override_styles/pressed = ExtResource("2_pq22l")
+text = "查询账单"
+
+[node name="底部标签" type="Panel" parent="按钮排列容器/查询账单"]
+show_behind_parent = true
+layout_mode = 0
+offset_top = 90.0
+offset_right = 300.0
+offset_bottom = 120.0
+theme_override_styles/panel = ExtResource("3_8uipt")
+
+[node name="自定义格式" type="Button" parent="按钮排列容器"]
+custom_minimum_size = Vector2(300, 120)
+layout_mode = 2
+size_flags_horizontal = 10
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.352941, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("1_3ber7")
+theme_override_styles/hover = ExtResource("2_pq22l")
+theme_override_styles/pressed = ExtResource("2_pq22l")
+text = "自定义格式"
+
+[node name="底部标签" type="Panel" parent="按钮排列容器/自定义格式"]
+show_behind_parent = true
+layout_mode = 0
+offset_top = 90.0
+offset_right = 300.0
+offset_bottom = 120.0
+theme_override_styles/panel = ExtResource("4_q6a06")
+
+[node name="分析外框" type="Panel" parent="."]
+offset_left = 40.0
+offset_top = 250.0
+offset_right = 1260.0
+offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2yie8")

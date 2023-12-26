@@ -1,0 +1,67 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1703571764
+export_presets.cfg::TextFile::-1::1702103909::0::1::::<><>::
+::res://ButtonGroup/::1703568388
+左侧边栏按钮组合.tres::ButtonGroup::180117373726655003::1703568388::0::1::::<><>::
+账簿选择按钮组合.tres::ButtonGroup::3765059105801803319::1702802447::0::1::::<><>::
+::res://Pictures/::1702881374
+下拉箭头.png::CompressedTexture2D::2028475917084038817::1702537613::1702537644::1::::<><>::
+主页.png::CompressedTexture2D::7050141376465480719::1702504942::1702534019::1::::<><>::
+分析.png::CompressedTexture2D::5135567120402587941::1702504942::1702534019::1::::<><>::
+分账.png::CompressedTexture2D::7856926207080539214::1702504968::1702534019::1::::<><>::
+右箭头.png::CompressedTexture2D::3714777544009765638::1702881372::1702881374::1::::<><>::
+左箭头.png::CompressedTexture2D::554789879838580697::1702881117::1702881138::1::::<><>::
+总账.png::CompressedTexture2D::8405439323201099364::1702504968::1702534019::1::::<><>::
+搜索.png::CompressedTexture2D::2597378218220401289::1702541531::1702541586::1::::<><>::
+日期选择.png::CompressedTexture2D::1227266688960567000::1702541447::1702541586::1::::<><>::
+用户头像.png::CompressedTexture2D::8703865949054705224::1702541435::1702541586::1::::<><>::
+自定义.png::CompressedTexture2D::4427652712790472396::1702504942::1702534019::1::::<><>::
+设置.png::CompressedTexture2D::6809468303710847019::1702504942::1702534019::1::::<><>::
+账单.png::CompressedTexture2D::1779631691392785540::1702504942::1702534019::1::::<><>::
+::res://Scene/::1703572258
+开始界面.tscn::PackedScene::2752439746720911963::1703490334::0::1::::<><>::uid://dryr6w1xea25x
+账簿.tscn::PackedScene::3564100940567048741::1703572525::0::1::::<><>::uid://bmiyiifwuopq0::::res://Styles/账簿表顶背景.tres<>uid://dni7wv6qwaq75::::res://Styles/账簿 过滤按钮 正常.tres<>uid://cvf5rcj7h3bxu::::res://Styles/账簿 过滤按钮 悬停.tres<>uid://ckv2tqif5l1d0::::res://Styles/账簿 过滤按钮 按下.tres<>res://Scripts/WindowControllers/ContentController.gd<>uid://h50kqmb1xjjl::::res://Pictures/左箭头.png<>uid://bs6p3w8ss651c::::res://Pictures/右箭头.png<>uid://nm8xh4h66c2w::::res://Styles/账簿侧边栏添加新账按钮样式.tres<>uid://c6aw87qs2id1m::::res://Styles/账簿侧边栏账单按钮 正常.tres<>uid://sh8qw5v36kys::::res://Styles/账簿侧边栏账单按钮 按下.tres<>uid://40c6vkt03vm8::::res://Styles/账簿侧边栏账单按钮 悬停.tres<>uid://btv28die2yust::::res://ButtonGroup/账簿选择按钮组合.tres<>uid://dr0wmfnh4arya::::res://Pictures/总账.png<>res://Scripts/WindowControllers/AddBillController.gd<>res://Scripts/WindowControllers/FilterWindow.gd
+首页.tscn::PackedScene::7233924879934424774::1703490334::0::1::::<><>::uid://cyp0kvuhfeks6
+::res://Scripts/::1703571331
+Main.gd::GDScript::-1::1703571331::0::1::::Main<>Node<>::
+::res://Scripts/Bill/::1703571704
+AllEntries.gd::GDScript::-1::1703490858::0::1::::AllEntries<>RefCounted<>::
+Bill.gd::GDScript::-1::1703411586::0::1::::Bill<>RefCounted<>::
+Entry.gd::GDScript::-1::1703489909::0::1::::Entry<>RefCounted<>::
+::res://Scripts/Bill/FilterSystem/::1703572258
+EntryFilter.gd::GDScript::-1::1703572525::0::1::::EntryFilter<>RefCounted<>::
+FilterController.gd::GDScript::-1::1703572504::0::1::::FilterController<>RefCounted<>::
+::res://Scripts/Tools/::1703419946
+Tools.gd::GDScript::-1::1703419946::0::1::::Tools<>RefCounted<>::
+::res://Scripts/WindowControllers/::1703571041
+AddBillController.gd::GDScript::-1::1703490995::0::1::::<>PopupPanel<>::
+ContentController.gd::GDScript::-1::1703571041::0::1::::<>HBoxContainer<>::
+FilterWindow.gd::GDScript::-1::1703570996::0::1::::<>PopupMenu<>::
+PageController.gd::GDScript::-1::1702886479::0::1::::<>Control<>::
+::res://Styles/::1703568388
+按钮悬停颜色.tres::StyleBoxFlat::8403106204240380319::1702535973::0::1::::<><>::
+按钮正常颜色.tres::StyleBoxFlat::1878059984475185092::1702537193::0::1::::<><>::
+日期选择框 正常.tres::StyleBoxFlat::8575267318139195398::1702542205::0::1::::<><>::
+日期选择框 聚焦.tres::StyleBoxFlat::3747967721740395600::1702542243::0::1::::<><>::
+日期选择框 选中.tres::StyleBoxFlat::1175931155671779539::1702542224::0::1::::<><>::
+账单选择框 正常.tres::StyleBoxFlat::429887375243915383::1703568388::0::1::::<><>::
+账单选择框 聚焦.tres::StyleBoxFlat::9193046477992874018::1703568388::0::1::::<><>::
+账单选择框 选中.tres::StyleBoxFlat::293957616954818447::1702538144::0::1::::<><>::
+账簿 过滤按钮 悬停.tres::StyleBoxFlat::6258980961248888630::1702882240::0::1::::<><>::
+账簿 过滤按钮 按下.tres::StyleBoxFlat::5519755878490436159::1702882240::0::1::::<><>::
+账簿 过滤按钮 正常.tres::StyleBoxFlat::8090215423276312638::1702880020::0::1::::<><>::
+账簿侧边栏添加新账按钮样式.tres::StyleBoxFlat::939272647187719356::1702882459::0::1::::<><>::
+账簿侧边栏账单按钮 悬停.tres::StyleBoxFlat::2087263822287222109::1702884172::0::1::::<><>::
+账簿侧边栏账单按钮 按下.tres::StyleBoxFlat::1279883266077400770::1702884172::0::1::::<><>::
+账簿侧边栏账单按钮 正常.tres::StyleBoxFlat::6950091931523242556::1702884172::0::1::::<><>::
+账簿内容背景.tres::StyleBoxFlat::2825262002684283340::1702880020::0::1::::<><>::
+账簿表顶背景.tres::StyleBoxFlat::3246673752497299621::1703057049::0::1::::<><>::
+首页内容背景.tres::StyleBoxFlat::2535124679508277983::1703057017::0::1::::<><>::
+首页按钮 按下.tres::StyleBoxFlat::5588870979786999507::1702618003::0::1::::<><>::
+首页按钮 正常.tres::StyleBoxFlat::6489876197979426939::1702616739::0::1::::<><>::
+首页按键标签 快速记账.tres::StyleBoxFlat::1992795995167893119::1702616968::0::1::::<><>::
+首页按键标签 查询账单.tres::StyleBoxFlat::4089538837168401109::1702616968::0::1::::<><>::
+首页按键标签 自定义格式.tres::StyleBoxFlat::3242944699288086194::1702616968::0::1::::<><>::
+::res://Test/::1703490334
+CodeTest.tscn::PackedScene::8756220174767617192::1703490334::0::1::::<><>::
+Test.gd::GDScript::-1::1703426578::0::1::::Test<>Node<>::
