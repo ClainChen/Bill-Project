@@ -5,5 +5,6 @@ class_name FilterController
 var entryFilter: EntryFilter = EntryFilter.new() ## 系统使用的条目过滤管理器[EntryFilter]
 
 func Initialize():
-	pass
+	BMain.initProSupervisor.initProcess.append("FilterController")
+	entryFilter.Initialize()
 

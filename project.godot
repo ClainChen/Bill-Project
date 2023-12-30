@@ -11,15 +11,14 @@ config_version=5
 [application]
 
 config/name="Godot Projects"
-run/main_scene="res://Scene/开始界面.tscn"
+run/main_scene="res://Scene/UIMain.tscn"
 config/features=PackedStringArray("4.1", "C#", "Forward Plus")
 
 [autoload]
 
-MainPage="*res://Scene/首页.tscn"
-BillPage="*res://Scene/账簿.tscn"
-BMain="*res://Scripts/Main.gd"
-CodeTest="*res://Test/Test.gd"
+BMain="*res://Scripts/BackMain.gd"
+FMain="*res://Scripts/FrontMain.gd"
+CodeTest="*res://Scripts/Test/Test.gd"
 
 [display]
 

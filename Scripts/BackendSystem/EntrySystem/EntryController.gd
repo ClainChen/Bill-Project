@@ -1,15 +1,17 @@
 ## 描述账单中所拥有的的全局内容的类
-class_name AllEntries
+class_name EntryController
 
 const ID_HEAD = "e" ## 条目ID的前缀
 
 var allEntry: Array[Entry] = [] ## 已创建的所有条目
-var id_num = 0 ## 当前已占用到的id号
+var id_num: int = 0 ## 当前已占用到的id号
 
 var additionEntriesFile: FileAccess = FileAccess.open("Data/otherEntries.csv", FileAccess.WRITE)
 
 ## 初始化全局条目内容
 func Initialize():
+	BMain.initProSupervisor.initProcess.append("EntryController")
+	
 	# 初始化默认Entry
 	InitializeEntries("Data/defaultEntries.csv")
 	InitializeEntries("Data/otherEntries.csv")
@@ -39,9 +41,15 @@ func InitializeEntries(path: String) -> void:
 		assert(data.size() == heads.size())
 		enumContents = [] if data[5] == "none" else PackedStringArray(data[5].split("-",true,0))
 		newEntry = Entry.new(data[0],data[1],data[2],data[3].to_int(),data[4] == "t", enumContents)
+		newEntry.enabled = newEntry.id in BConstants.DEFAULT_ACTIVATE_ENTRIES
 		id_num += 1
 		allEntry.append(newEntry)
 		
+
+## 获得所有条目
+func GetAllEntry():
+	return allEntry
+
 
 func _to_string() -> String:
 	var s = "共计" + str(len(allEntry)) + "个可用条目\n\n"

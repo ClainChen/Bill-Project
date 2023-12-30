@@ -1,10 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://bq1qhsmosem42"]
+[gd_scene load_steps=21 format=3 uid="uid://bveel111ki6vx"]
 
+[ext_resource type="Script" path="res://Scripts/FrontendSystem/SceneControllers/BillScene/BillPage.gd" id="1_8gm8u"]
 [ext_resource type="StyleBox" uid="uid://bmiyiifwuopq0" path="res://Assets/Styles/账簿表顶背景.tres" id="1_v8mb4"]
 [ext_resource type="StyleBox" uid="uid://dni7wv6qwaq75" path="res://Assets/Styles/账簿 过滤按钮 正常.tres" id="2_ash36"]
 [ext_resource type="StyleBox" uid="uid://cvf5rcj7h3bxu" path="res://Assets/Styles/账簿 过滤按钮 悬停.tres" id="3_3h0xl"]
 [ext_resource type="StyleBox" uid="uid://ckv2tqif5l1d0" path="res://Assets/Styles/账簿 过滤按钮 按下.tres" id="4_hrhbh"]
-[ext_resource type="Script" path="res://Scripts/WindowControllers/ContentController.gd" id="5_lh7sg"]
 [ext_resource type="Texture2D" uid="uid://h50kqmb1xjjl" path="res://Assets/Pictures/左箭头.png" id="5_o75xr"]
 [ext_resource type="Texture2D" uid="uid://bs6p3w8ss651c" path="res://Assets/Pictures/右箭头.png" id="6_6a8vg"]
 [ext_resource type="StyleBox" uid="uid://nm8xh4h66c2w" path="res://Assets/Styles/账簿侧边栏添加新账按钮样式.tres" id="7_02uwb"]
@@ -13,8 +13,7 @@
 [ext_resource type="StyleBox" uid="uid://40c6vkt03vm8" path="res://Assets/Styles/账簿侧边栏账单按钮 悬停.tres" id="9_6uxcl"]
 [ext_resource type="ButtonGroup" uid="uid://btv28die2yust" path="res://Assets/ButtonGroup/账簿选择按钮组合.tres" id="9_xgs8n"]
 [ext_resource type="Texture2D" uid="uid://dr0wmfnh4arya" path="res://Assets/Pictures/总账.png" id="10_c153q"]
-[ext_resource type="Script" path="res://Scripts/WindowControllers/AddBillController.gd" id="14_sg7cr"]
-[ext_resource type="Script" path="res://Scripts/WindowControllers/FilterWindow.gd" id="15_o3fdh"]
+[ext_resource type="Script" path="res://Scripts/FrontendSystem/SceneControllers/BillScene/FilterWindow.gd" id="14_8hck5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3rxe"]
 bg_color = Color(0.843137, 0.843137, 0.843137, 1)
@@ -58,21 +57,20 @@ border_width_bottom = 1
 border_color = Color(0.513726, 0.513726, 0.513726, 1)
 corner_radius_bottom_right = 30
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bi3dl"]
-content_margin_left = 10.0
-content_margin_top = 10.0
-content_margin_right = 10.0
-content_margin_bottom = 10.0
-bg_color = Color(0.800781, 0.800781, 0.800781, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2n4vm"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 0.792157)
 
-[node name="账簿" type="Window"]
-transparent_bg = true
-size = Vector2i(1300, 700)
-unresizable = true
-borderless = true
-transparent = true
+[node name="账簿" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 240.0
+offset_top = 130.0
+offset_right = 1540.0
+offset_bottom = 830.0
+script = ExtResource("1_8gm8u")
 
 [node name="Panel" type="Panel" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -135,7 +133,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 10.0
 theme_override_constants/separation = 8
-script = ExtResource("5_lh7sg")
 
 [node name="MainContentBackground" type="Panel" parent="Panel/VBoxContainer/Content"]
 layout_mode = 2
@@ -154,14 +151,33 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 7.0
 theme_override_constants/separation = 0
 
-[node name="MainContentTable" type="GridContainer" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit"]
 layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+
+[node name="MainContentTable" type="GridContainer" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
-columns = 6
+columns = 7
 
-[node name="DateHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/MainContentTable"]
+[node name="IDHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer/MainContentTable"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ce3vy")
+text = "ID"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="DateHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer/MainContentTable"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -174,7 +190,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="PayerHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/MainContentTable"]
+[node name="PayerHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer/MainContentTable"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -187,7 +203,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="ReceiverHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/MainContentTable"]
+[node name="ReceiverHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer/MainContentTable"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -200,7 +216,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="PayMethodHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/MainContentTable"]
+[node name="PayMethodHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer/MainContentTable"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -213,7 +229,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="FeeHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/MainContentTable"]
+[node name="FeeHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer/MainContentTable"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -225,7 +241,7 @@ text = "金额"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AddInfoHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/MainContentTable"]
+[node name="AddInfoHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer/MainContentTable"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
@@ -240,7 +256,7 @@ autowrap_mode = 3
 [node name="MainContentDetailInfo" type="Panel" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-size_flags_vertical = 10
+size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxFlat_rvex0")
 
 [node name="HorizontalSplitContainer" type="HBoxContainer" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/MainContentDetailInfo"]
@@ -357,171 +373,47 @@ text = "总账"
 icon = ExtResource("10_c153q")
 alignment = 0
 
-[node name="AddBillWindow" type="PopupPanel" parent="Panel"]
-title = "添加新账"
-initial_position = 2
-size = Vector2i(640, 360)
-unresizable = false
-borderless = false
-always_on_top = true
-theme_override_styles/panel = SubResource("StyleBoxFlat_bi3dl")
-script = ExtResource("14_sg7cr")
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 110.0
+offset_top = 5.0
+offset_right = 250.0
+offset_bottom = 635.0
+script = ExtResource("14_8hck5")
 
-[node name="VerticalSplitContainer" type="VBoxContainer" parent="Panel/AddBillWindow"]
-layout_direction = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 630.0
-offset_bottom = 350.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 10
-
-[node name="DateContainer" type="HBoxContainer" parent="Panel/AddBillWindow/VerticalSplitContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
-theme_override_constants/separation = 8
 
-[node name="DateLabel" type="Label" parent="Panel/AddBillWindow/VerticalSplitContainer/DateContainer"]
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
-theme_override_font_sizes/font_size = 18
-text = "日期"
+text = "过滤内容"
+horizontal_alignment = 1
 
-[node name="DateInput" type="LineEdit" parent="Panel/AddBillWindow/VerticalSplitContainer/DateContainer"]
+[node name="ContentScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_2n4vm")
+
+[node name="ContentContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ContentScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "日期"
-select_all_on_focus = true
+size_flags_vertical = 3
 
-[node name="PayRecContainer" type="HBoxContainer" parent="Panel/AddBillWindow/VerticalSplitContainer"]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="PayerLabel" type="Label" parent="Panel/AddBillWindow/VerticalSplitContainer/PayRecContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
-theme_override_font_sizes/font_size = 18
-text = "付款人"
-
-[node name="PayerInput" type="LineEdit" parent="Panel/AddBillWindow/VerticalSplitContainer/PayRecContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-placeholder_text = "付款人"
-
-[node name="ReceiverLabel" type="Label" parent="Panel/AddBillWindow/VerticalSplitContainer/PayRecContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
-theme_override_font_sizes/font_size = 18
-text = "收款人"
-
-[node name="ReceiverInput" type="LineEdit" parent="Panel/AddBillWindow/VerticalSplitContainer/PayRecContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-placeholder_text = "收款人"
-
-[node name="PaymentInfoContainer" type="HBoxContainer" parent="Panel/AddBillWindow/VerticalSplitContainer"]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="MethodLabel" type="Label" parent="Panel/AddBillWindow/VerticalSplitContainer/PaymentInfoContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
-theme_override_font_sizes/font_size = 18
-text = "付款方式"
-
-[node name="MethodInput" type="LineEdit" parent="Panel/AddBillWindow/VerticalSplitContainer/PaymentInfoContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-placeholder_text = "付款方式"
-
-[node name="AmountLabel" type="Label" parent="Panel/AddBillWindow/VerticalSplitContainer/PaymentInfoContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
-theme_override_font_sizes/font_size = 18
-text = "金额"
-
-[node name="AmountInput" type="LineEdit" parent="Panel/AddBillWindow/VerticalSplitContainer/PaymentInfoContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-placeholder_text = "金额"
-
-[node name="AddInfoContainer" type="HBoxContainer" parent="Panel/AddBillWindow/VerticalSplitContainer"]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="AddInfoLabel" type="Label" parent="Panel/AddBillWindow/VerticalSplitContainer/AddInfoContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
-theme_override_font_sizes/font_size = 18
-text = "备注"
-
-[node name="AddInfoInput" type="TextEdit" parent="Panel/AddBillWindow/VerticalSplitContainer/AddInfoContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-placeholder_text = "备注"
-wrap_mode = 1
-scroll_smooth = true
-scroll_fit_content_height = true
-
-[node name="ConfirmContainer" type="HBoxContainer" parent="Panel/AddBillWindow/VerticalSplitContainer"]
-custom_minimum_size = Vector2(0, 20)
+[node name="ButtonContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 10
-theme_override_constants/separation = 200
+size_flags_vertical = 8
 
-[node name="Submit" type="Button" parent="Panel/AddBillWindow/VerticalSplitContainer/ConfirmContainer"]
-custom_minimum_size = Vector2(60, 0)
+[node name="Submit" type="Button" parent="PanelContainer/VBoxContainer/ButtonContainer"]
 layout_mode = 2
 text = "确定"
 
-[node name="Cancel" type="Button" parent="Panel/AddBillWindow/VerticalSplitContainer/ConfirmContainer"]
-custom_minimum_size = Vector2(60, 0)
-layout_mode = 2
-size_flags_horizontal = 2
-text = "取消"
-
-[node name="FilterWindow" type="PopupMenu" parent="Panel"]
-mode = 1
-title = "过滤内容"
-initial_position = 4
-size = Vector2i(160, 500)
-wrap_controls = false
-borderless = false
-theme_override_font_sizes/font_size = 20
-theme_override_font_sizes/font_separator_size = 20
-script = ExtResource("15_o3fdh")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/FilterWindow"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -42.0
-offset_top = -31.0
-offset_right = 42.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="SubmitFilter" type="Button" parent="Panel/FilterWindow/HBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 8
-text = "确认"
-
-[node name="CancelFilter" type="Button" parent="Panel/FilterWindow/HBoxContainer"]
+[node name="Cancel" type="Button" parent="PanelContainer/VBoxContainer/ButtonContainer"]
 layout_mode = 2
 text = "取消"
 
-[connection signal="pressed" from="Panel/VBoxContainer/Content/SideBackground/SideContainer/AddNewBill" to="Panel/AddBillWindow" method="_on_AddBill_pressed"]
-[connection signal="close_requested" from="Panel/FilterWindow" to="Panel/FilterWindow" method="_on_cancel_requested"]
+[connection signal="pressed" from="Panel/VBoxContainer/TitleBackground/Title/FilterButton" to="PanelContainer" method="OpenFilterWindow"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ButtonContainer/Submit" to="PanelContainer" method="SubmitFilter"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ButtonContainer/Cancel" to="PanelContainer" method="CancelFilter"]
