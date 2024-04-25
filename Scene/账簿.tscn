@@ -6,6 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://cvf5rcj7h3bxu" path="res://Assets/Styles/账簿 过滤按钮 悬停.tres" id="3_3h0xl"]
 [ext_resource type="StyleBox" uid="uid://ckv2tqif5l1d0" path="res://Assets/Styles/账簿 过滤按钮 按下.tres" id="4_hrhbh"]
 [ext_resource type="Texture2D" uid="uid://h50kqmb1xjjl" path="res://Assets/Pictures/左箭头.png" id="5_o75xr"]
+[ext_resource type="Script" path="res://Scripts/CustomNodes/Table.gd" id="6_5lq8q"]
 [ext_resource type="Texture2D" uid="uid://bs6p3w8ss651c" path="res://Assets/Pictures/右箭头.png" id="6_6a8vg"]
 [ext_resource type="StyleBox" uid="uid://nm8xh4h66c2w" path="res://Assets/Styles/账簿侧边栏添加新账按钮样式.tres" id="7_02uwb"]
 [ext_resource type="StyleBox" uid="uid://c6aw87qs2id1m" path="res://Assets/Styles/账簿侧边栏账单按钮 正常.tres" id="8_5d1n8"]
@@ -30,14 +31,6 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.498039, 0.498039, 0.498039, 1)
 corner_radius_bottom_left = 30
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3vy"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.552941, 0.552941, 0.552941, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvex0"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -156,102 +149,21 @@ layout_mode = 2
 size_flags_vertical = 3
 follow_focus = true
 
-[node name="MainContentTable" type="GridContainer" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer"]
+[node name="GridContainer" type="Control" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/h_separation = 0
-theme_override_constants/v_separation = 0
-columns = 7
+script = ExtResource("6_5lq8q")
 
-[node name="IDHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer/MainContentTable"]
-custom_minimum_size = Vector2(50, 0)
+[node name="Button" type="Button" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_ce3vy")
-text = "ID"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="DateHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer/MainContentTable"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_ce3vy")
-text = "日期"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="PayerHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer/MainContentTable"]
-custom_minimum_size = Vector2(140, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_ce3vy")
-text = "付款人"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="ReceiverHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer/MainContentTable"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_ce3vy")
-text = "收款人"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="PayMethodHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer/MainContentTable"]
-custom_minimum_size = Vector2(140, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_ce3vy")
-text = "付款方式"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="FeeHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer/MainContentTable"]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_ce3vy")
-text = "金额"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AddInfoHeader" type="Label" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer/MainContentTable"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_ce3vy")
-text = "备注"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
+offset_left = 534.0
+offset_top = 554.0
+offset_right = 596.0
+offset_bottom = 585.0
+size_flags_horizontal = 6
+size_flags_vertical = 10
+text = "Button"
 
 [node name="MainContentDetailInfo" type="Panel" parent="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit"]
 custom_minimum_size = Vector2(0, 40)
@@ -415,5 +327,6 @@ layout_mode = 2
 text = "取消"
 
 [connection signal="pressed" from="Panel/VBoxContainer/TitleBackground/Title/FilterButton" to="PanelContainer" method="OpenFilterWindow"]
+[connection signal="pressed" from="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer/GridContainer/Button" to="Panel/VBoxContainer/Content/MainContentBackground/MainContentUpDownSplit/ScrollContainer/GridContainer" method="_on_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ButtonContainer/Submit" to="PanelContainer" method="SubmitFilter"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ButtonContainer/Cancel" to="PanelContainer" method="CancelFilter"]
